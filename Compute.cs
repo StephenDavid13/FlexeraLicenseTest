@@ -29,7 +29,8 @@ public class Compute
 		appIDData = checkAppID(appID, data);
 
 		finalLicenses = numOfLicenses(appIDData);
-
+		
+		/* To check surplus or lacking licenses */
 		if(lCheck.licChecker == 0)
         {
 			MessageBox.Show("Application ID: " + appID + " requires " + finalLicenses + " number of license(s).");
