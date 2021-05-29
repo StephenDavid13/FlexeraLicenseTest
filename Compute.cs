@@ -5,7 +5,12 @@ using System.Windows.Forms;
 
 public class Compute
 {
-    internal static double ComputeCSV(string appID, StreamReader fileCSV)
+	static class lCheck
+    {
+		public static int licChecker = 0;
+    }
+
+    internal static void ComputeCSV(string appID, StreamReader fileCSV)
 	{
 		var data = new List<string[]>();
 		var appIDData = new List<string[]>();
@@ -25,7 +30,15 @@ public class Compute
 
 		finalLicenses = numOfLicenses(appIDData);
 
-		return finalLicenses;
+		if(lCheck.licChecker == 0)
+        {
+			MessageBox.Show("Application ID: " + appID + " requires " + finalLicenses + " number of licenses.");
+		}
+		else
+        {
+			MessageBox.Show("Application ID: " + appID + " has a surplus of " + finalLicenses + " number of licenses.");
+		}
+		
 	}
 
 	/* Check Application ID matching to CSV file */
@@ -38,7 +51,6 @@ public class Compute
 			{
 				if (data[i][2] == appID)
 				{
-
 					finaldata.Add(data[i]);
 				}
 			}
@@ -67,10 +79,12 @@ public class Compute
 			if(difference > 0)
             {
 				numLicenses = difference;
+				lCheck.licChecker = 0;
             }
 			else
             {
-				numLicenses = 0;
+				numLicenses = numLaptops - numDesktops;
+                lCheck.licChecker = 1;
             }
         }
 		else
