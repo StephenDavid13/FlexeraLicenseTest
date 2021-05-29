@@ -92,9 +92,9 @@ namespace FlexeraTest
                 }
                 else
                 {
-                    licenses = Compute.ComputeCSV(txtAppID.Text, fileCSV);
+                    Compute.ComputeCSV(txtAppID.Text, fileCSV);
 
-                    MessageBox.Show("Application ID: " + txtAppID.Text + " requires " + licenses + " number of licenses.");
+                    
 
                     fileCSV.DiscardBufferedData();
                     fileCSV.BaseStream.Position = 0;
