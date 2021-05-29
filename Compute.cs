@@ -12,9 +12,11 @@ public class Compute
 		int row = 0;
 		double finalLicenses = 0 ;
 
+		/* Read CSV file */
 		while (!fileCSV.EndOfStream)
 		{
 			string[] Line = fileCSV.ReadLine().Split(',');
+			//Console.WriteLine(Line[0]);
 			data.Add(Line);
 			row++;
 		}
@@ -26,6 +28,7 @@ public class Compute
 		return finalLicenses;
 	}
 
+	/* Check Application ID matching to CSV file */
 	private static List<string[]> checkAppID(string appID, List<string[]> data)
     {
 		List<string[]> finaldata = new List<string[]>();
@@ -39,12 +42,6 @@ public class Compute
 					finaldata.Add(data[i]);
 				}
 			}
-
-			foreach(String[] lines in finaldata)
-            {
-				Console.WriteLine(lines[2]);
-			}
-			
 		}
 		catch (Exception ex)
 		{
@@ -53,6 +50,8 @@ public class Compute
 
 		return finaldata;
     }
+
+	/* Check number of licenses */
 	private static double numOfLicenses(List<string[]> dataLicense)
     {
 		double numLicenses = 0;
@@ -83,6 +82,7 @@ public class Compute
 
 	}
 
+	/* Check number of desktops */
 	private static double numOfDesktops(List<string[]> dataDesktop)
 	{
 		double numDesktop = 0;
@@ -99,6 +99,7 @@ public class Compute
 		return numDesktop;
 	}
 
+	/* Check number of laptops */
 	private static double numOfLaptops(List<string[]> dataLaptop)
 	{
 		double numLaptop = 0;

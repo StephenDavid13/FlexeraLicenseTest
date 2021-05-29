@@ -73,7 +73,7 @@ namespace FlexeraTest
             // 
             this.txtAppID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtAppID.Location = new System.Drawing.Point(139, 63);
-            this.txtAppID.MaxLength = 3;
+            this.txtAppID.MaxLength = 5;
             this.txtAppID.Name = "txtAppID";
             this.txtAppID.Size = new System.Drawing.Size(121, 23);
             this.txtAppID.TabIndex = 5;

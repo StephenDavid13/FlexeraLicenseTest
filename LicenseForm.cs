@@ -23,15 +23,14 @@ namespace FlexeraTest
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
+        private void Form1_Load(object sender, EventArgs e) { }
 
-        }
-
+        /* Button click for opening files */
         private void btnFile_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
             {
+                /* Filter Open File Dialog to just CSV files */
                 openFileDialog1.Filter = "csv files (*.csv)|*.csv";
                 openFileDialog1.FilterIndex = 2;
                 openFileDialog1.RestoreDirectory = true;
@@ -42,16 +41,22 @@ namespace FlexeraTest
                     {
                         fileCSV = new StreamReader(openFileDialog1.FileName);
                         SetText(openFileDialog1.SafeFileName);
+
+                        var size = new FileInfo(openFileDialog1.FileName).Length;
+
+                        /* check if size is roughly bigger than 1GB */
+                        if(size > 1000000000)
+                        {
+                            MessageBox.Show("Large File Size: Please let application process large data.");
+                        }
                     }
                     catch (SecurityException ex)
                     {
-                        MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n" +
-                        $"Details:\n\n{ex.StackTrace}");
+                        MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n");
                     }
                     catch (IOException ex)
                     {
-                        MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n" +
-                        $"Details:\n\n{ex.StackTrace}");
+                        MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n");
                     }
                 }
             }
@@ -62,6 +67,7 @@ namespace FlexeraTest
             txtFile.Text = text;
         }
 
+        /* To check if user placed non-numeric key */
         private void txtAppID_TextChanged(object sender, EventArgs e)
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(txtAppID.Text, "[^0-9]"))
@@ -97,8 +103,7 @@ namespace FlexeraTest
             }
             catch(Exception ex)
             {
-                MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n" +
-                $"Details:\n\n{ex.StackTrace}");
+                MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n");
             }
         }
     }
