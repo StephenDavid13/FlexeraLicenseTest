@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
+/* 
+ * This generates all the necessary computations and forumalae for the license checker
+ * @author sdavid
+ * 
+ */
+
+
 public class Compute
 {
 	public class lCheck
@@ -10,7 +17,13 @@ public class Compute
 		public static int licChecker = 0;
     }
 
-    public static void ComputeCSV(string appID, StreamReader fileCSV)
+	public enum computerType
+    {
+		Desktop,
+		Laptop
+    };
+
+    public static string ComputeCSV(string appID, StreamReader fileCSV)
 	{
 		var data = new List<string[]>();
 		var appIDData = new List<string[]>();
@@ -21,7 +34,6 @@ public class Compute
 		while (!fileCSV.EndOfStream)
 		{
 			string[] Line = fileCSV.ReadLine().Split(',');
-			//Console.WriteLine(Line[0]);
 			data.Add(Line);
 			row++;
 		}
@@ -33,11 +45,11 @@ public class Compute
 		/* To check surplus or lacking licenses */
 		if(lCheck.licChecker == 0)
         {
-			MessageBox.Show("Application ID: " + appID + " requires " + finalLicenses + " number of license(s).");
+			return "Application ID: " + appID + " requires " + finalLicenses + " number of license(s).";
 		}
 		else
         {
-			MessageBox.Show("Application ID: " + appID + " has a surplus of " + finalLicenses + " number of license(s).");
+			return "Application ID: " + appID + " has a surplus of " + finalLicenses + " number of license(s).";
 		}
 		
 	}
@@ -70,8 +82,8 @@ public class Compute
 		double numLicenses = 0;
 		double numLaptops, numDesktops;
 
-		numDesktops = numOfDesktops(dataLicense);
-		numLaptops = numOfLaptops(dataLicense);
+		numDesktops = numOfDevices(dataLicense, computerType.Desktop.ToString());
+		numLaptops = numOfDevices(dataLicense, computerType.Laptop.ToString());
 
 		if(numLaptops > 0)
         {
@@ -98,37 +110,17 @@ public class Compute
 	}
 
 	/* Check number of desktops */
-	public static double numOfDesktops(List<string[]> dataDesktop)
+	public static double numOfDevices(List<string[]> dataDevice, string computerType)
 	{
-		double numDesktop = 0;
-		foreach (String[] dataline in dataDesktop)
+		double numDevice = 0;
+		foreach (String[] dataline in dataDevice)
 		{
-			if(dataline[3].ToUpper() == "DESKTOP")
+			if(dataline[3].ToUpper() == computerType.ToUpper())
             {
-				numDesktop++;
+				numDevice++;
             }
 		}
-
-		Console.WriteLine("No of Desktops: " + numDesktop);
-
-		return numDesktop;
-	}
-
-	/* Check number of laptops */
-	public static double numOfLaptops(List<string[]> dataLaptop)
-	{
-		double numLaptop = 0;
-		foreach (String[] dataline in dataLaptop)
-		{
-			if (dataline[3].ToUpper() == "LAPTOP")
-			{
-				numLaptop++;
-			}
-		}
-
-		Console.WriteLine("No of Laptops: " + numLaptop);
-
-		return numLaptop;
+		return numDevice;
 	}
 
 }

@@ -12,6 +12,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Compute;
 
+/* 
+ * This generates all front-end fields and buttons
+ * @author sdavid
+ * 
+ */
+
 namespace FlexeraTest
 {
     public partial class FlexeraTest : Form
@@ -79,6 +85,7 @@ namespace FlexeraTest
 
         public void btnCalculate_Click(object sender, EventArgs e)
         {
+            string message;
             try
             {
                 if(string.IsNullOrEmpty(txtAppID.Text))
@@ -91,9 +98,9 @@ namespace FlexeraTest
                 }
                 else
                 {
-                    Compute.ComputeCSV(txtAppID.Text, fileCSV);
+                    message = Compute.ComputeCSV(txtAppID.Text, fileCSV);
 
-                    
+                    MessageBox.Show(message);
 
                     fileCSV.DiscardBufferedData();
                     fileCSV.BaseStream.Position = 0;
