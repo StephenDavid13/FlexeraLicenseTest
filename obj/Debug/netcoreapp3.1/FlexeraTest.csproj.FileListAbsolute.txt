@@ -28,3 +28,14 @@ C:\Users\sldav\source\repos\FlexeraLicenseTest\obj\Debug\netcoreapp3.1\FlexeraTe
 C:\Users\sldav\source\repos\FlexeraLicenseTest\obj\Debug\netcoreapp3.1\FlexeraTest.dll
 C:\Users\sldav\source\repos\FlexeraLicenseTest\obj\Debug\netcoreapp3.1\FlexeraTest.pdb
 C:\Users\sldav\source\repos\FlexeraLicenseTest\obj\Debug\netcoreapp3.1\FlexeraTest.genruntimeconfig.cache
+C:\Users\sldav\source\repos\FlexeraLicenseTest\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\sldav\source\repos\FlexeraLicenseTest\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\sldav\source\repos\FlexeraLicenseTest\obj\Debug\netcoreapp3.1\FlexeraTest.csproj.CopyComplete
+C:\Users\sldav\source\repos\FlexeraLicenseTest\bin\Debug\netcoreapp3.1\NUnit3.TestAdapter.dll
+C:\Users\sldav\source\repos\FlexeraLicenseTest\bin\Debug\netcoreapp3.1\NUnit3.TestAdapter.pdb
+C:\Users\sldav\source\repos\FlexeraLicenseTest\bin\Debug\netcoreapp3.1\nunit.engine.dll
+C:\Users\sldav\source\repos\FlexeraLicenseTest\bin\Debug\netcoreapp3.1\nunit.engine.api.dll
+C:\Users\sldav\source\repos\FlexeraLicenseTest\bin\Debug\netcoreapp3.1\nunit.engine.core.dll
+C:\Users\sldav\source\repos\FlexeraLicenseTest\bin\Debug\netcoreapp3.1\Microsoft.DotNet.InternalAbstractions.dll
+C:\Users\sldav\source\repos\FlexeraLicenseTest\bin\Debug\netcoreapp3.1\nunit.framework.dll
+C:\Users\sldav\source\repos\FlexeraLicenseTest\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll

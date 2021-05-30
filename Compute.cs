@@ -5,12 +5,12 @@ using System.Windows.Forms;
 
 public class Compute
 {
-	static class lCheck
+	public class lCheck
     {
 		public static int licChecker = 0;
     }
 
-    internal static void ComputeCSV(string appID, StreamReader fileCSV)
+    public static void ComputeCSV(string appID, StreamReader fileCSV)
 	{
 		var data = new List<string[]>();
 		var appIDData = new List<string[]>();
@@ -43,7 +43,7 @@ public class Compute
 	}
 
 	/* Check Application ID matching to CSV file */
-	private static List<string[]> checkAppID(string appID, List<string[]> data)
+	public static List<string[]> checkAppID(string appID, List<string[]> data)
     {
 		List<string[]> finaldata = new List<string[]>();
 		try
@@ -65,7 +65,7 @@ public class Compute
     }
 
 	/* Check number of licenses */
-	private static double numOfLicenses(List<string[]> dataLicense)
+	public static double numOfLicenses(List<string[]> dataLicense)
     {
 		double numLicenses = 0;
 		double numLaptops, numDesktops;
@@ -98,7 +98,7 @@ public class Compute
 	}
 
 	/* Check number of desktops */
-	private static double numOfDesktops(List<string[]> dataDesktop)
+	public static double numOfDesktops(List<string[]> dataDesktop)
 	{
 		double numDesktop = 0;
 		foreach (String[] dataline in dataDesktop)
@@ -115,7 +115,7 @@ public class Compute
 	}
 
 	/* Check number of laptops */
-	private static double numOfLaptops(List<string[]> dataLaptop)
+	public static double numOfLaptops(List<string[]> dataLaptop)
 	{
 		double numLaptop = 0;
 		foreach (String[] dataline in dataLaptop)

@@ -23,10 +23,10 @@ namespace FlexeraTest
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e) { }
+        public void Form1_Load(object sender, EventArgs e) { }
 
         /* Button click for opening files */
-        private void btnFile_Click(object sender, EventArgs e)
+        public void btnFile_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
             {
@@ -62,7 +62,7 @@ namespace FlexeraTest
             }
         }
 
-        private void SetText(string text)
+        public void SetText(string text)
         {
             txtFile.Text = text;
         }
@@ -77,9 +77,8 @@ namespace FlexeraTest
             }
         }
 
-        private void btnCalculate_Click(object sender, EventArgs e)
+        public void btnCalculate_Click(object sender, EventArgs e)
         {
-            Double licenses = 0; 
             try
             {
                 if(string.IsNullOrEmpty(txtAppID.Text))
@@ -106,5 +105,6 @@ namespace FlexeraTest
                 MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n");
             }
         }
+
     }
 }
