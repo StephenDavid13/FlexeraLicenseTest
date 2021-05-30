@@ -10,7 +10,7 @@ Visual Studio 2019
 C#
 
 ### USERS
-- Please go to /Release/ then download LicensingSoftware.zip.
+- Please go to /Release/ then download FlexeraLicensingSoftware.zip.
 - Unzip the file and open the .exe file
 - Select a CSV file to open
 - Enter the Application ID to search
