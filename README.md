@@ -24,3 +24,6 @@ C#
 - Release folder contains the zip file of the deployable software
 - bin folder contains the binary files which are the actual executable code for the application
 - The obj folder contains all of the object or intermediate files which is not the final product
+
+## Unit Tests
+- For unit tests used in this project please see repo: https://github.com/StephenDavid13/FlexeraLicenseTestUnitTests
