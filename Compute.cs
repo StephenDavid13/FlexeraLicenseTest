@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 /* 
@@ -39,6 +40,11 @@ public class Compute
 		}
 
 		appIDData = checkAppID(appID, data);
+
+		if(!appIDData.Any())
+        {
+			return "Application ID: " + appID + " cannot be found. Please input correct Application ID.";
+		}
 
 		finalLicenses = numOfLicenses(appIDData);
 		
