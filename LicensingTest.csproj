@@ -6,6 +6,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon />
     <StartupObject />
+    <AssemblyName>Flexera Licensing Software</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
